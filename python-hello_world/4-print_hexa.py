@@ -1,2 +1,2 @@
-for i in range(99):
+for i in range(98):
     print("{} = {}".format(i, hex(i)))
