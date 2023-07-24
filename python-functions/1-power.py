@@ -4,5 +4,3 @@ def pow(a, b):
         result *= a
     return result
 
-
-print(pow(2,2))
