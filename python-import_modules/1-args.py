@@ -5,7 +5,7 @@ def print_arguments():
     num_arguments = len(sys.argv) - 1
 
     # Print the number of arguments
-    print(num_arguments, ":  argument(s)")
+    print(num_arguments, ": arguments")
 
     if num_arguments == 0:
         # If no arguments were passed, print a period and a new line
