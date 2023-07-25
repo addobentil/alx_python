@@ -19,8 +19,8 @@ def print_arguments():
         print(num_arguments ,"arguments:", end="\n")
         # If at least two arguments were passed, print each argument and its position
         
-        for i in range(1, num_arguments + 1):
-            print("{}: {}".format(i, sys.argv[i]), end="\n")
+        for i in range(num_arguments):
+            print("{}: {}".format(i + 1, sys.argv[i + 1]), end="\n")
 
 
 if __name__ == "__main__":
