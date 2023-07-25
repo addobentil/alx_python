@@ -9,18 +9,18 @@ def print_arguments():
 
     if num_arguments == 0:
         # If no arguments were passed, print a period and a new line
-        print(num_arguments ,"arguments.", end="\n")
+        print("0 arguments.")
         
     elif num_arguments == 1:
             # If no arguments were passed, print a period and a new line
-        print(num_arguments ,"argument:", end="\n")
+        print("1 argument:")
         
     else:
-        print(num_arguments ,"arguments:", end="\n")
+        print(num_arguments,"arguments:")
         # If at least two arguments were passed, print each argument and its position
         
         for i in range(num_arguments):
-            print("{}: {}".format(i + 1, sys.argv[i + 1]), end="\n")
+            print("{}: {}".format(i + 1, sys.argv[i + 1]))
 
 
 if __name__ == "__main__":
