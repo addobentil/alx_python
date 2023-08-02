@@ -4,4 +4,5 @@
 
 class BaseGeometry:
     """Represent base geometry."""
-    pass
+    def __init__(self):
+        pass
