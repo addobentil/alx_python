@@ -1,4 +1,5 @@
-""" rectangle class Definition."""
+#!/usr/bin/python3
+"""rectangle class definition"""
 from models.base import Base
 
 
@@ -25,7 +26,7 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
-        
+
     @property
     def width(self):
         """Set/get the width of the Rectangle."""
@@ -77,11 +78,11 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-        
+
     def area(self):
         """Return the area of the Rectangle."""
         return self.width * self.height
-    
+
     def display(self):
         """Print the Rectangle using the `#` character."""
         if self.width == 0 or self.height == 0:
@@ -89,12 +90,11 @@ class Rectangle(Base):
             return
 
         [print("") for y in range(self.y)]
-    for h in range(self.height):
+        for h in range(self.height):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
-            
-    
+
     def update(self, *args, **kwargs):
         """Updates the Rectangle.
 
@@ -107,7 +107,7 @@ class Rectangle(Base):
                 - 5th argument represents y attribute
             **kwargs (dict): New key/value pairs of attributes.
         """
-    if args and len(args) != 0:
+        if args and len(args) != 0:
             a = 0
             for arg in args:
                 if a == 0:
@@ -125,7 +125,7 @@ class Rectangle(Base):
                     self.y = arg
                 a += 1
 
-    elif kwargs and len(kwargs) != 0:
+        elif kwargs and len(kwargs) != 0:
             for k, v in kwargs.items():
                 if k == "id":
                     if v is None:
@@ -140,3 +140,19 @@ class Rectangle(Base):
                     self.x = v
                 elif k == "y":
                     self.y = v
+
+    def to_dictionary(self):
+        """Return the dictionary representation of a Rectangle."""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+
+    def __str__(self):
+        """Return the print() and str() representation of the Rectangle."""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.x, self.y,
+                                                       self.width, self.height)
